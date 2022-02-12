@@ -10,6 +10,7 @@ Created on Sat Feb 12 13:15:30 2022
 ### Imports
 ##############################################################################
 
+import subprocess
 
 
 
@@ -50,19 +51,17 @@ while ((long < 0) or (long > 360)):
 
 print('** Your coordinates are:', lat, 'deg lat,', long, 'deg long')
 
-
-
-
 ##############################################################################
 ### Query
 ##############################################################################
 
+# Run the query script
 
+script_path = 'test_script.sh'
+lat_script = str(lat)
+long_script = str(long)
 
-
-
-
-
+list_files = subprocess.run(["bash", script_path, lat_script, long_script])
 
 
 ##############################################################################
