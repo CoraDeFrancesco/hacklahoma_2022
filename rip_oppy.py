@@ -17,6 +17,7 @@ import json
 import time
 from datetime import datetime
 import sys
+import query
 
 ##############################################################################
 ### Useful Functions
@@ -136,15 +137,16 @@ print('** Your coordinates are:', lat, 'deg lat,', long, 'deg long')
 
 script_path = 'test_script.sh'
 
-lat_script = str(lat)
-long_script = str(long)
 initial_time, final_time = get_time()
 
-list_files = subprocess.run(["bash", script_path, lat_script, long_script])
+query.make_input_file(lat, long, initial_time, final_time)
+query.query_horizons()
+
+#list_files = subprocess.run(["bash", script_path, lat_script, long_script])
 
 # read in file and skip header rows.
 
-results_path = 'results2.txt'
+results_path = 'results.txt'
 
 data = np.loadtxt(results_path, skiprows=36, max_rows=1, dtype=str)
 x_pos = float(data[4][:-1])
