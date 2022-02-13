@@ -1,5 +1,5 @@
 # rip-oppy
-# #Project Description
+# # Project Description
 rip-oppy is a retro-theme interface that outputs a precise distance between the user's coordinates and the rover Opportunity's (Oppy) location on Mars at the current time. This project was created as a tribute for Opportunity's legacy of Mars exploration and data collection. 
 Some of the technologies used to develop this project and its purposes include:
 -  The JPL Horizons solar system data and ephemeris computation service from NASA (https://ssd.jpl.nasa.gov/horizons/) to create a query to get coordinates for both the user and Opportunity's location with respect to the same reference frame. 
