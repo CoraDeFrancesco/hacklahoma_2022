@@ -3,7 +3,7 @@
 """
 Created on Sat Feb 12 13:15:30 2022
 
-@author: user1
+@author: Cora, Cosme, and Alex
 """
 
 ##############################################################################
@@ -15,17 +15,65 @@ import subprocess
 import requests
 import json
 import time
+from datetime import datetime
 import sys
+import query
 
 ##############################################################################
 ### Useful Functions
 ##############################################################################
 
 def delay_print(s):
+    """
+    Take a string and print to comm line one letter at a time with brief delay.
+
+    Parameters
+    ----------
+    s : str
+        string to print.
+
+    Returns
+    -------
+    None.
+
+    """
+    
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(0.1)
+        
+def get_time():
+    """
+    Generate a string of the current time in UTC.
+
+    Returns
+    -------
+    initial_time : str
+    
+    final_time : str
+
+    """
+    
+    #gets today's time into UT
+    myTime= datetime.utcnow()
+   #extracts dates and make them string
+    year = myTime.strftime("%Y")
+    month = myTime.strftime("%m")
+    day = myTime.strftime("%d")
+    hour = myTime.strftime("%H")
+    minute = myTime.strftime("%M")
+    second = myTime.strftime("%S")
+    #print(second)
+    # outputs initial time
+    initialUtcTime = (year + "-" + month + "-" + day + " " + hour + ":"+ minute + ":" + second)
+    #print(initialUtcTime)
+    #outputs final time 
+    newDay = int(day) + 1
+    finalUtcTime = (year + "-" + month + "-" + str(newDay) + " " + hour + ":"+ minute + ":" + second)
+    #print(initialUtcTime)
+    
+    return(initialUtcTime, finalUtcTime)
 
 
 ##############################################################################
@@ -33,6 +81,20 @@ def delay_print(s):
 ##############################################################################
 
 # Welcome the user
+
+delay_print("My battery is low...")
+print()
+delay_print("     and it's getting dark.")
+print()
+delay_print("          - The Rover Opportunity")
+print()
+delay_print("            Final data transmission")
+print()
+delay_print("            June 10, 2018")
+time.sleep(1)
+print()
+print()
+print()
 
 delay_print('** Welcome to Ode to Oppy!')
 time.sleep(1)
@@ -75,15 +137,17 @@ print('** Your coordinates are:', lat, 'deg lat,', long, 'deg long')
 # Run the query script
 
 script_path = 'test_script.sh'
-lat_script = str(lat)
-long_script = str(long)
-current_time = 1
 
-list_files = subprocess.run(["bash", script_path, lat_script, long_script])
+initial_time, final_time = get_time()
 
-# read in file and skip 29 rows
+query.make_input_file(lat, long, initial_time, final_time)
+query.query_horizons()
 
-data = np.loadtxt('horizons_csv_output.txt', skiprows=30, max_rows=1, dtype=str)
+# read in file and skip header rows.
+
+results_path = 'results.txt'
+
+data = np.loadtxt(results_path, skiprows=36, max_rows=1, dtype=str)
 x_pos = float(data[4][:-1])
 y_pos = float(data[5][:-1])
 z_pos = float(data[6][:-1])
