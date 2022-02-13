@@ -76,6 +76,54 @@ def get_time():
     
     return(initialUtcTime, finalUtcTime)
 
+def show_quote():
+    
+    delay_print("My battery is low...")
+    print()
+    delay_print("     and it's getting dark.")
+    print()
+    delay_print("          - The Rover Opportunity")
+    print()
+    delay_print("            Final data transmission")
+    print()
+    delay_print("            June 10, 2018")
+    time.sleep(1)
+    print()
+    print()
+    print()
+    
+    return(1)
+    
+def show_poem():
+    
+    pause_poem = 0.9
+    delay_print('It seems to me you lived your life')
+    print()
+    time.sleep(pause_poem)
+    delay_print('like a rover in the wind')
+    print()
+    time.sleep(pause_poem)
+    delay_print('never fading with the sunset')
+    print()
+    time.sleep(pause_poem)
+    delay_print('when the dust set in.')
+    print()
+    time.sleep(pause_poem)
+    delay_print('Your tracks will always fall here,')
+    print()
+    time.sleep(pause_poem)
+    delay_print('among Mars\' reddest hills;')
+    print()
+    time.sleep(pause_poem)
+    delay_print('your candle\'s burned out long before')
+    print()
+    time.sleep(pause_poem)
+    delay_print('your science ever will.')
+    print()
+    time.sleep(1.5)
+    
+    return(1)
+
 
 ##############################################################################
 ### User Input
@@ -83,19 +131,15 @@ def get_time():
 
 # Welcome the user
 
-delay_print("My battery is low...")
-print()
-delay_print("     and it's getting dark.")
-print()
-delay_print("          - The Rover Opportunity")
-print()
-delay_print("            Final data transmission")
-print()
-delay_print("            June 10, 2018")
-time.sleep(1)
-print()
-print()
-print()
+verbose_flag = str(input("Would you like to experience *emotions* about a Mars Rover? (y/n): "))
+
+if ((verbose_flag == 'y') or (verbose_flag == 'yes')):
+    show_quote()
+elif ((verbose_flag == 'n') or (verbose_flag == 'no')):
+    print()
+else:
+    print('ERROR: Unknown input. Please restart.')
+
 
 delay_print('** Welcome to Ode to Oppy!')
 time.sleep(1)
@@ -191,31 +235,12 @@ print()
 time.sleep(0.75)
 print()
 
-pause_poem = 0.9
-delay_print('It seems to me you lived your life')
-print()
-time.sleep(pause_poem)
-delay_print('like a rover in the wind')
-print()
-time.sleep(pause_poem)
-delay_print('never fading with the sunset')
-print()
-time.sleep(pause_poem)
-delay_print('when the dust set in.')
-print()
-time.sleep(pause_poem)
-delay_print('Your tracks will always fall here,')
-print()
-time.sleep(pause_poem)
-delay_print('among Mars\' reddest hills;')
-print()
-time.sleep(pause_poem)
-delay_print('your candle\'s burned out long before')
-print()
-time.sleep(pause_poem)
-delay_print('your science ever will.')
-print()
-time.sleep(1.5)
+#TODO put poem here
+
+if ((verbose_flag == 'y') or (verbose_flag == 'yes')):
+    show_poem()
+elif ((verbose_flag == 'n') or (verbose_flag == 'no')):
+    print()
 
 print()
 
