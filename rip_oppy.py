@@ -142,8 +142,6 @@ initial_time, final_time = get_time()
 query.make_input_file(lat, long, initial_time, final_time)
 query.query_horizons()
 
-#list_files = subprocess.run(["bash", script_path, lat_script, long_script])
-
 # read in file and skip header rows.
 
 results_path = 'results.txt'
