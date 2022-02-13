@@ -8,8 +8,14 @@ Some of the tecnologies used to develop this project and its purposes include:
 
 In the future, some of the features that can be implemented to the program are Oppy's birthday, statistics about the mission, and even calculating the dates when Oppy will be the closest to the user's location on Earth.
 # # How to Install and Run rip-oppy
-Install rip-oppy by typing in your command line `pip install rip-oppy 1.0.0` 
+Install rip-oppy by typing in your command line `pip install rip-oppy ` 
 # #How to Use the Project 
 Input your terrestrial coordinates for latitude and longitude in the given format or choose one of the given cities.
+# # Credits
+**Team:** <br />
+- Cora de Francesco: https://github.com/CoraDeFrancesco  <br />
+- Alex Parsells:    <br />
+- Cosme Aquino Ovelar   <br />
+
 
 
