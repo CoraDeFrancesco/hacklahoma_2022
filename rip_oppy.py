@@ -3,7 +3,7 @@
 """
 Created on Sat Feb 12 13:15:30 2022
 
-@author: user1
+@author: Cora, Cosme, and Alex
 """
 
 ##############################################################################
@@ -79,6 +79,20 @@ def get_time():
 ##############################################################################
 
 # Welcome the user
+
+delay_print("My battery is low...")
+print()
+delay_print("     and it's getting dark.")
+print()
+delay_print("          - The Rover Opportunity")
+print()
+delay_print("            Final data transmission")
+print()
+delay_print("            June 10, 2018")
+time.sleep(1)
+print()
+print()
+print()
 
 delay_print('** Welcome to Ode to Oppy!')
 time.sleep(1)
