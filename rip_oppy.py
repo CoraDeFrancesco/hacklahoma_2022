@@ -57,19 +57,20 @@ def get_time():
     
     #gets today's time into UT
     myTime= datetime.utcnow()
-    #extracts dates and make them string
+   #extracts dates and make them string
     year = myTime.strftime("%Y")
     month = myTime.strftime("%m")
     day = myTime.strftime("%d")
     hour = myTime.strftime("%H")
     minute = myTime.strftime("%M")
     second = myTime.strftime("%S")
+    #print(second)
     # outputs initial time
-    initialUtcTime = (month + " " + day + " " + year[2:] + " " + hour + ","+ minute + "," + second)
+    initialUtcTime = (year + "-" + month + "-" + day + " " + hour + ":"+ minute + ":" + second)
     #print(initialUtcTime)
     #outputs final time 
     newDay = int(day) + 1
-    finalUtcTime = (month + " " + str (newDay) + " " + year[2:] + " " + hour + ","+ minute + "," + second)
+    finalUtcTime = (year + "-" + month + "-" + str(newDay) + " " + hour + ":"+ minute + ":" + second)
     #print(initialUtcTime)
     
     return(initialUtcTime, finalUtcTime)
