@@ -15,6 +15,7 @@ import subprocess
 import requests
 import json
 import time
+from datetime import datetime
 import sys
 
 ##############################################################################
@@ -22,10 +23,49 @@ import sys
 ##############################################################################
 
 def delay_print(s):
+    """
+    Take a string and print to comm line one letter at a time with brief delay.
+
+    Parameters
+    ----------
+    s : str
+        string to print.
+
+    Returns
+    -------
+    None.
+
+    """
+    
     for c in s:
         sys.stdout.write(c)
         sys.stdout.flush()
         time.sleep(0.1)
+        
+def get_time():
+    """
+    Generate a string of the current time in UTC.
+
+    Returns
+    -------
+    UTC_time : str
+
+    """
+    
+    #gets today's time into UT
+    myTime= datetime.utcnow()
+    #extracts dates and make them string
+    year = myTime.strftime("%Y")
+    month = myTime.strftime("%m")
+    day = myTime.strftime("%d")
+    hour = myTime.strftime("%H")
+    minute = myTime.strftime("%M")
+    second = myTime.strftime("%S")
+    # outputs initial time
+    initialUtcTime = (month + " " + day + " " + year[2:] + " " + hour + ","+ minute + "," + second)
+    print(initialUtcTime)
+    
+    return(initialUtcTime)
 
 
 ##############################################################################
@@ -77,7 +117,7 @@ print('** Your coordinates are:', lat, 'deg lat,', long, 'deg long')
 script_path = 'test_script.sh'
 lat_script = str(lat)
 long_script = str(long)
-current_time = 1
+current_time = get_time()
 
 list_files = subprocess.run(["bash", script_path, lat_script, long_script])
 
