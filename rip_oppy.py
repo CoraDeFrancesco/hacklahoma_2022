@@ -48,7 +48,9 @@ def get_time():
 
     Returns
     -------
-    UTC_time : str
+    initial_time : str
+    
+    final_time : str
 
     """
     
@@ -63,9 +65,13 @@ def get_time():
     second = myTime.strftime("%S")
     # outputs initial time
     initialUtcTime = (month + " " + day + " " + year[2:] + " " + hour + ","+ minute + "," + second)
-    print(initialUtcTime)
+    #print(initialUtcTime)
+    #outputs final time 
+    newDay = int(day) + 1
+    finalUtcTime = (month + " " + str (newDay) + " " + year[2:] + " " + hour + ","+ minute + "," + second)
+    #print(initialUtcTime)
     
-    return(initialUtcTime)
+    return(initialUtcTime, finalUtcTime)
 
 
 ##############################################################################
@@ -115,13 +121,14 @@ print('** Your coordinates are:', lat, 'deg lat,', long, 'deg long')
 # Run the query script
 
 script_path = 'test_script.sh'
+
 lat_script = str(lat)
 long_script = str(long)
-current_time = get_time()
+initial_time, final_time = get_time()
 
 list_files = subprocess.run(["bash", script_path, lat_script, long_script])
 
-# read in file and skip 29 rows
+# read in file and skip header rows.
 
 results_path = 'results2.txt'
 
