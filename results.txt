@@ -1,0 +1,100 @@
+API VERSION: 1.0
+API SOURCE: NASA/JPL Horizons API
+
+
+
+*******************************************************************************
+Ephemeris / WWW_USER Sat Feb 12 22:05:55 2022 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: Mars (499)                      {source: mar097}
+Target point    : (user defined coordinates below)
+Center body name: Earth (399)                     {source: mar097}
+Center-site name: (user defined site below)
+*******************************************************************************
+Start time      : A.D. 2022-Feb-13 06:05:54.0000 TDB
+Stop  time      : A.D. 2022-Feb-14 06:05:54.0000 TDB
+Step-size       : 1440 minutes
+*******************************************************************************
+Target geodetic : 5.34378100,-2.3280780,2.343E-14 {W-lon(deg),Lat(deg),Alt(km)}
+Target cylindric: 5.34378100,3393.41968,-136.3402 {W-lon(deg),Dxy(km),Dz(km)}
+Target pole/equ : IAU_MARS                        {West-longitude positive}
+Target radii    : 3396.2 x 3396.2 x 3376.2 km     {Equator, meridian, pole}    
+Center geodetic : 40.0000000,90.0000000,3.919E-13 {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 40.0000000,3.9186E-13,6356.7523 {E-lon(deg),Dxy(km),Dz(km)}
+Center pole/equ : ITRF93                          {East-longitude positive}
+Center radii    : 6378.1 x 6378.1 x 6356.8 km     {Equator, meridian, pole}    
+Output units    : KM-S
+Output type     : GEOMETRIC cartesian states
+Output format   : 3 (position, velocity, LT, range, range-rate)
+EOP file        : eop.220210.p220505
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2022-FEB-10. PREDICTS-> 2022-MAY-04
+Reference frame : Ecliptic of J2000.0
+*******************************************************************************
+            JDTDB,            Calendar Date (TDB),                      X,                      Y,                      Z,                     VX,                     VY,                     VZ,                     LT,                     RG,                     RR,
+**************************************************************************************************************************************************************************************************************************************************************************
+$$SOE
+2459623.754097222, A.D. 2022-Feb-13 06:05:54.0000,  7.634237423246892E+07, -3.035301468756709E+08, -3.488351418608055E+06,  4.263103397758901E+01,  2.183076846933819E+01, -6.796380502617705E-01,  1.044065618245493E+03,  3.130029980071060E+08, -1.076466109004976E+01,
+2459624.754097222, A.D. 2022-Feb-14 06:05:54.0000,  8.000341761804557E+07, -3.016414507516916E+08, -3.545317615407735E+06,  4.227948037793853E+01,  2.234823632282282E+01, -6.927832280639628E-01,  1.041022925224748E+03,  3.120908215874775E+08, -1.075390601733831E+01,
+$$EOE
+**************************************************************************************************************************************************************************************************************************************************************************
+ 
+TIME
+
+  Barycentric Dynamical Time ("TDB" or T_eph) output was requested. This
+continuous relativistic coordinate time is equivalent to the relativistic
+proper time of a clock at rest in a reference frame comoving with the
+solar system barycenter but outside the system's gravity well. It is the
+independent variable in the solar system relativistic equations of motion.
+
+  TDB runs at a uniform rate of one SI second per second and is independent
+of irregularities in Earth's rotation.
+
+  Calendar dates prior to 1582-Oct-15 are in the Julian calendar system.
+Later calendar dates are in the Gregorian system.
+
+REFERENCE FRAME AND COORDINATES
+
+  Ecliptic at the standard reference epoch
+
+    Reference epoch: J2000.0
+    X-Y plane: adopted Earth orbital plane at the reference epoch
+               Note: IAU76 obliquity of 84381.448 arcseconds wrt ICRF X-Y plane
+    X-axis   : ICRF
+    Z-axis   : perpendicular to the X-Y plane in the directional (+ or -) sense
+               of Earth's north pole at the reference epoch.
+
+  Symbol meaning:
+
+    JDTDB    Julian Day Number, Barycentric Dynamical Time
+      X      X-component of position vector (km)
+      Y      Y-component of position vector (km)
+      Z      Z-component of position vector (km)
+      VX     X-component of velocity vector (km/sec)                           
+      VY     Y-component of velocity vector (km/sec)                           
+      VZ     Z-component of velocity vector (km/sec)                           
+      LT     One-way down-leg Newtonian light-time (sec)
+      RG     Range; distance from coordinate center (km)
+      RR     Range-rate; radial velocity wrt coord. center (km/sec)
+
+ABERRATIONS AND CORRECTIONS
+
+ Geometric state vectors have NO corrections or aberrations applied.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/hrzn_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Author      : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************
+
