@@ -83,7 +83,9 @@ list_files = subprocess.run(["bash", script_path, lat_script, long_script])
 
 # read in file and skip 29 rows
 
-data = np.loadtxt('horizons_csv_output.txt', skiprows=30, max_rows=1, dtype=str)
+results_path = 'results2.txt'
+
+data = np.loadtxt(results_path, skiprows=36, max_rows=1, dtype=str)
 x_pos = float(data[4][:-1])
 y_pos = float(data[5][:-1])
 z_pos = float(data[6][:-1])
