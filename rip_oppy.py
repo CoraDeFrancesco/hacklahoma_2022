@@ -18,6 +18,7 @@ import time
 from datetime import datetime
 import sys
 import query
+import reverse_geocode
 
 ##############################################################################
 ### Useful Functions
@@ -129,6 +130,14 @@ while ((long < 0) or (long > 360)):
 # Confirm choice
 
 print('** Your coordinates are:', lat, 'deg lat,', long, 'deg long')
+
+coordinates = (lat, long),
+
+nearest_place = reverse_geocode.search(coordinates)[0]
+
+print('Calculating distance from', (nearest_place['city']+', ' + nearest_place['country']), 'to Opportunity....')
+print()
+delay_print('.................................................................')
 
 ##############################################################################
 ### Query

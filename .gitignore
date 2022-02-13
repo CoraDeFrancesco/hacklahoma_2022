@@ -4,4 +4,5 @@ horizons_csv_output.txt
 .ipynb_checkpoints/
 horizons_params.txt
 results.txt
+__pycache__/*
 >>>>>>> 4be28fa702e47babc753306855fdd918f22f5877
