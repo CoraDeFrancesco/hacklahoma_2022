@@ -1,6 +1,0 @@
-API VERSION: 1.0
-API SOURCE: NASA/JPL Horizons API
-
-
-Geodetic latitude not in the range -90 to 90 degrees
-
