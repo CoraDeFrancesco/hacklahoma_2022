@@ -1,6 +1,4 @@
 #!/bin/sh
-#imports horizon
-telnet ssd.jpl.nasa.gov 6775
 #inputs opportunity target
 g: -354.656219,-2.328078,0 @ 499
 #Set ephemeris
