@@ -14,7 +14,7 @@ Input your terrestrial coordinates for latitude and longitude in the given forma
 # # Credits
 **Team:** <br />
 - Cora de Francesco: https://github.com/CoraDeFrancesco  <br />
-- Alex Parsells:    <br />
+- Alex Parsells: https://github.com/parsellsx   <br />
 - Cosme Aquino Ovelar   <br />
 
 
