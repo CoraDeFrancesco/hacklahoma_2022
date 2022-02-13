@@ -10,6 +10,7 @@ Created on Sat Feb 12 13:15:30 2022
 ### Imports
 ##############################################################################
 
+import numpy as np
 import subprocess
 import requests
 import json
@@ -61,26 +62,25 @@ print('** Your coordinates are:', lat, 'deg lat,', long, 'deg long')
 script_path = 'test_script.sh'
 lat_script = str(lat)
 long_script = str(long)
+time = 1
 
 list_files = subprocess.run(["bash", script_path, lat_script, long_script])
 
-#%%
+# read in file and skip 29 rows
 
-url = "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='499'&OBJ_DATA='YES'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2006-01-01'&STOP_TIME='2006-01-20'&STEP_SIZE='1%20d'&QUANTITIES='1,9,20,23,24,29'"
-
-# Submit the API request and decode the JSON-response:
-response = requests.get(url)
-try:
-  data = json.loads(response.text)
-except ValueError:
-  print("Unable to decode JSON results")
+data = np.loadtxt('horizons_csv_output.txt', skiprows=30, max_rows=1, dtype=str)
+x_pos = float(data[4][:-1])
+y_pos = float(data[5][:-1])
+z_pos = float(data[6][:-1])
 
 
 ##############################################################################
 ### Calculation and Execution
 ##############################################################################
 
+# calculate distance
 
+dist = np.sqrt(x_pos**2 + y_pos**2 + z_pos**2)
 
 
 
@@ -92,8 +92,10 @@ except ValueError:
 ### Command Line Output
 ##############################################################################
 
+print('Oppy is currently', dist, 'km away from you.')
 
 
+print('Safe intraplanetary travels from Oppy\'s Alien Family!')
 
 print(r"""\
 
