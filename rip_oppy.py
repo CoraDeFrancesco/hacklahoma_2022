@@ -11,7 +11,8 @@ Created on Sat Feb 12 13:15:30 2022
 ##############################################################################
 
 import subprocess
-
+import requests
+import json
 
 
 ##############################################################################
@@ -63,6 +64,17 @@ long_script = str(long)
 
 list_files = subprocess.run(["bash", script_path, lat_script, long_script])
 
+#%%
+
+url = "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='499'&OBJ_DATA='YES'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2006-01-01'&STOP_TIME='2006-01-20'&STEP_SIZE='1%20d'&QUANTITIES='1,9,20,23,24,29'"
+
+# Submit the API request and decode the JSON-response:
+response = requests.get(url)
+try:
+  data = json.loads(response.text)
+except ValueError:
+  print("Unable to decode JSON results")
+
 
 ##############################################################################
 ### Calculation and Execution
@@ -79,3 +91,18 @@ list_files = subprocess.run(["bash", script_path, lat_script, long_script])
 ##############################################################################
 ### Command Line Output
 ##############################################################################
+
+
+
+
+print(r"""\
+
+                        .-.
+        .-""`""-.    |(@ @)
+     _/`oOoOoOoOo`\_ \ \-/
+    '.-=-=-=-=-=-=-.' \/ \
+jgs   `-=.=-.-=.=-'    \ /\
+         ^  ^  ^       _H_ \
+
+
+                """)
